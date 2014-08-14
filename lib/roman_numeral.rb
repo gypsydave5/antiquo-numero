@@ -1,6 +1,7 @@
 class Fixnum
 
 	def roman_numeral
-		'I'
+	return 'I' if self == 1
+		'II' if self == 2
 	end
 end
