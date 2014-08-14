@@ -69,6 +69,35 @@ describe 'the roman numeral method' do
 		end
 	end
 
+	it 'returns a string ending in II for numbers ending in 2' do
+		(1..100).select {|number| number.to_s[-1] == 2}.each do |tenner|
+			expect(tenner.roman_numeral[-2,2]).to eq 'II'
+		end
+	end
+
+	it 'returns a string ending in III for numbers ending in 3' do
+		(1..100).select {|number| number.to_s[-1] == 3}.each do |tenner|
+			expect(tenner.roman_numeral[-2,3]).to eq 'III'
+		end
+	end
+
+	it 'returns a string ending in IV for numbers ending in 4' do
+		(1..100).select {|number| number.to_s[-1] == 4}.each do |tenner|
+			expect(tenner.roman_numeral[-2,2]).to eq 'IV'
+		end
+	end
+
+	it 'returns a string ending in VI for numbers ending in 6' do
+		(1..100).select {|number| number.to_s[-1] == 6}.each do |tenner|
+			expect(tenner.roman_numeral[-2,2]).to eq 'VI'
+		end
+	end
+
+	it 'returns a string ending in VII for numbers ending in 7' do
+		(1..100).select {|number| number.to_s[-1] == 7}.each do |tenner|
+			expect(tenner.roman_numeral[-2, 3]).to eq 'VII'
+		end
+	end
 
 end
 
