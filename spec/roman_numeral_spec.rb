@@ -28,6 +28,33 @@ describe 'the roman numeral method' do
 		expect(17.roman_numeral).to eq 'XVII'
 		expect(18.roman_numeral).to eq 'XVIII'
 		expect(19.roman_numeral).to eq 'XIX'
+		expect(20.roman_numeral).to eq 'XX'
+	end
+
+	it "can count to 30" do
+		expect(21.roman_numeral).to eq 'XXI'
+		expect(22.roman_numeral).to eq 'XXII'
+		expect(23.roman_numeral).to eq 'XXIII'
+		expect(24.roman_numeral).to eq 'XXIV'
+		expect(25.roman_numeral).to eq 'XXV'
+		expect(26.roman_numeral).to eq 'XXVI'
+		expect(27.roman_numeral).to eq 'XXVII'
+		expect(28.roman_numeral).to eq 'XXVIII'
+		expect(29.roman_numeral).to eq 'XXIX'
+		expect(30.roman_numeral).to eq 'XXX'
+	end
+
+	it "can count to 40" do
+		expect(31.roman_numeral).to eq 'XXXI'
+		expect(32.roman_numeral).to eq 'XXXII'
+		expect(33.roman_numeral).to eq 'XXXIII'
+		expect(34.roman_numeral).to eq 'XXXIV'
+		expect(35.roman_numeral).to eq 'XXXV'
+		expect(36.roman_numeral).to eq 'XXXVI'
+		expect(37.roman_numeral).to eq 'XXXVII'
+		expect(38.roman_numeral).to eq 'XXXVIII'
+		expect(39.roman_numeral).to eq 'XXXIX'
+		expect(40.roman_numeral).to eq 'XL'
 	end
 
 	it 'returns a string ending in V for numbers ending in 5' do

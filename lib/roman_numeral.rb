@@ -9,7 +9,7 @@ class Fixnum
 	end
 
 	def array_numerals_to_roman(array)
-		"#{second_digit(array[-2])}#{first_digit(array[-1])}"
+		"#{fourth_digit(array[-4])}#{third_digit(array[-3])}#{second_digit(array[-2])}#{first_digit(array[-1])}"
 	end
 
 	def first_digit(string)
@@ -37,6 +37,26 @@ class Fixnum
 		return 'XC' if string == '9'
 		return '' if string == '0'
 	end
+
+	def third_digit(string)
+		return 'C' if string == '1'
+		return 'CC' if string == '2'
+		return 'CCC' if string == '3'
+		return 'CD' if string == '4'
+		return 'D' if string == '5'
+		return 'DC' if string == '6'
+		return 'DCC' if string == '7'
+		return 'DCCC' if string == '8'
+		return 'CM' if string == '9'
+		return '' if string == '0'
+	end
+
+	def fourth_digit(string)
+		return 'M' if string == '1'
+	end
+
+
+
 
 
 end
