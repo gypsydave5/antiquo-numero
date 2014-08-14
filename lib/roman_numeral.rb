@@ -6,9 +6,9 @@ class Fixnum
 		return 'III' if self == 3
 		return 'IV' if self == 4
 		return 'V' if self == 5
-		return 'XV' if self == 15
-		return 'XXV' if self == 25
-		return 'XXXV' if self == 35
+		return 'VI' if self == 6
+		return 'VII' if self == 7
+		return 'VIII' if self == 8
+		return 'IX' if self == 9
 	end
-
 end
