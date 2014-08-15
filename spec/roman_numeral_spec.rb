@@ -2,7 +2,7 @@ require 'roman_numeral'
 
 describe 'the roman numeral method' do
 
-	it "can count to 9" do
+	it "can count to units up to 9" do
 		expect(1.roman_numeral).to eq 'I'
 		expect(2.roman_numeral).to eq 'II'
 		expect(3.roman_numeral).to eq 'III'
@@ -14,94 +14,43 @@ describe 'the roman numeral method' do
 		expect(9.roman_numeral).to eq 'IX'
 	end
 
-	it "can count to 10" do
+	it "can count 10s up to 90" do
 		expect(10.roman_numeral).to eq 'X'
-	end
-
-	it "can count to 20" do
-		expect(11.roman_numeral).to eq 'XI'
-		expect(12.roman_numeral).to eq 'XII'
-		expect(13.roman_numeral).to eq 'XIII'
-		expect(14.roman_numeral).to eq 'XIV'
-		expect(15.roman_numeral).to eq 'XV'
-		expect(16.roman_numeral).to eq 'XVI'
-		expect(17.roman_numeral).to eq 'XVII'
-		expect(18.roman_numeral).to eq 'XVIII'
-		expect(19.roman_numeral).to eq 'XIX'
 		expect(20.roman_numeral).to eq 'XX'
-	end
-
-	it "can count to 30" do
-		expect(21.roman_numeral).to eq 'XXI'
-		expect(22.roman_numeral).to eq 'XXII'
-		expect(23.roman_numeral).to eq 'XXIII'
-		expect(24.roman_numeral).to eq 'XXIV'
-		expect(25.roman_numeral).to eq 'XXV'
-		expect(26.roman_numeral).to eq 'XXVI'
-		expect(27.roman_numeral).to eq 'XXVII'
-		expect(28.roman_numeral).to eq 'XXVIII'
-		expect(29.roman_numeral).to eq 'XXIX'
 		expect(30.roman_numeral).to eq 'XXX'
-	end
-
-	it "can count to 40" do
-		expect(31.roman_numeral).to eq 'XXXI'
-		expect(32.roman_numeral).to eq 'XXXII'
-		expect(33.roman_numeral).to eq 'XXXIII'
-		expect(34.roman_numeral).to eq 'XXXIV'
-		expect(35.roman_numeral).to eq 'XXXV'
-		expect(36.roman_numeral).to eq 'XXXVI'
-		expect(37.roman_numeral).to eq 'XXXVII'
-		expect(38.roman_numeral).to eq 'XXXVIII'
-		expect(39.roman_numeral).to eq 'XXXIX'
 		expect(40.roman_numeral).to eq 'XL'
+		expect(50.roman_numeral).to eq 'L'
+		expect(60.roman_numeral).to eq 'LX'
+		expect(70.roman_numeral).to eq 'LXX'
+		expect(80.roman_numeral).to eq 'LXXX'
+		expect(90.roman_numeral).to eq 'XC'
+	end
+	
+	it "can count 100s up to 900" do
+		expect(100.roman_numeral).to eq 'C'
+		expect(200.roman_numeral).to eq 'CC'
+		expect(300.roman_numeral).to eq 'CCC'
+		expect(400.roman_numeral).to eq 'CD'
+		expect(500.roman_numeral).to eq 'D'
+		expect(600.roman_numeral).to eq 'DC'
+		expect(700.roman_numeral).to eq 'DCC'
+		expect(800.roman_numeral).to eq 'DCCC'
+		expect(900.roman_numeral).to eq 'CM'
 	end
 
-	it 'returns a string ending in V for numbers ending in 5' do
-		(1..100).select {|number| number.to_s[-1] == '5'}.each do |fiver|
-			expect(fiver.roman_numeral[-1]).to eq 'V'
-		end
+	it "can count 1000s up to 4000" do
+		expect(1000.roman_numeral).to eq 'M'
+		expect(2000.roman_numeral).to eq 'MM'
+		expect(3000.roman_numeral).to eq 'MMM'
+		expect(4000.roman_numeral).to eq 'MMMM'
 	end
 
-	it 'returns a string ending in X for numbers ending in 0' do
-		(1..100).select {|number| number.to_s[-1] == 0}.each do |tenner|
-			expect(tenner.roman_numeral[-1]).to eq 'X'
-		end
+	it "returns MMMMCMXCIX for 4999" do
+		expect(4999.roman_numeral).to eq "MMMMCMXCIX"
 	end
 
-	it 'returns a string ending in II for numbers ending in 2' do
-		(1..100).select {|number| number.to_s[-1] == 2}.each do |tenner|
-			expect(tenner.roman_numeral[-2,2]).to eq 'II'
-		end
-	end
 
-	it 'returns a string ending in III for numbers ending in 3' do
-		(1..100).select {|number| number.to_s[-1] == 3}.each do |tenner|
-			expect(tenner.roman_numeral[-2,3]).to eq 'III'
-		end
-	end
 
-	it 'returns a string ending in IV for numbers ending in 4' do
-		(1..100).select {|number| number.to_s[-1] == 4}.each do |tenner|
-			expect(tenner.roman_numeral[-2,2]).to eq 'IV'
-		end
-	end
-
-	it 'returns a string ending in VI for numbers ending in 6' do
-		(1..100).select {|number| number.to_s[-1] == 6}.each do |tenner|
-			expect(tenner.roman_numeral[-2,2]).to eq 'VI'
-		end
-	end
-
-	it 'returns a string ending in VII for numbers ending in 7' do
-		(1..100).select {|number| number.to_s[-1] == 7}.each do |tenner|
-			expect(tenner.roman_numeral[-2, 3]).to eq 'VII'
-		end
-	end
-
-	it 'returns MMMMCMXCIX for 4999' do
-		expect(4999.roman_numeral).to eq 'MMMMCMXCIX'
-	end
 
 end
 
