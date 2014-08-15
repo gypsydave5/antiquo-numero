@@ -8,11 +8,11 @@ class Fixnum
 		self.to_s.chars
 	end
 
-	def array_numerals_to_roman(array)
-		"#{fourth_digit(array[-4])}#{third_digit(array[-3])}#{second_digit(array[-2])}#{first_digit(array[-1])}"
+	def array_numerals_to_roman(array_of_digits)
+		"#{thousands(array_of_digits[-4])}#{hundreds(array_of_digits[-3])}#{tens(array_of_digits[-2])}#{units(array_of_digits[-1])}"
 	end
 
-	def first_digit(string)
+	def units(string)
 		return 'I' if string == '1'
 		return 'II' if string == '2'
 		return 'III' if string == '3'
@@ -25,7 +25,7 @@ class Fixnum
 		return '' if string == '0'
 	end
 
-	def second_digit(string)
+	def tens(string)
 		return 'X' if string == '1'
 		return 'XX' if string == '2'
 		return 'XXX' if string == '3'
@@ -38,7 +38,7 @@ class Fixnum
 		return '' if string == '0'
 	end
 
-	def third_digit(string)
+	def hundreds(string)
 		return 'C' if string == '1'
 		return 'CC' if string == '2'
 		return 'CCC' if string == '3'
@@ -51,7 +51,7 @@ class Fixnum
 		return '' if string == '0'
 	end
 
-	def fourth_digit(string)
+	def thousands(string)
 		return 'M' if string == '1'
 		return 'MM' if string == '2'
 		return 'MMM' if string == '3'
