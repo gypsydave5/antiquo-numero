@@ -42,11 +42,10 @@ describe 'the roman numeral method' do
 		expect(1000.roman_numeral).to eq 'M'
 		expect(2000.roman_numeral).to eq 'MM'
 		expect(3000.roman_numeral).to eq 'MMM'
-		expect(4000.roman_numeral).to eq 'MMMM'
 	end
 
-	it "returns MMMMCMXCIX for 4999" do
-		expect(4999.roman_numeral).to eq "MMMMCMXCIX"
+	it "returns MMMMCMXCIX for 3999" do
+		expect(3999.roman_numeral).to eq "MMMCMXCIX"
 	end
 
 
