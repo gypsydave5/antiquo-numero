@@ -53,6 +53,9 @@ class Fixnum
 
 	def fourth_digit(string)
 		return 'M' if string == '1'
+		return 'MM' if string == '2'
+		return 'MMM' if string == '3'
+		return 'MMMM' if string == '4'
 	end
 
 

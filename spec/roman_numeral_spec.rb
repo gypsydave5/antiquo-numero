@@ -99,6 +99,10 @@ describe 'the roman numeral method' do
 		end
 	end
 
+	it 'returns MMMMCMXCIX for 4999' do
+		expect(4999.roman_numeral).to eq 'MMMMCMXCIX'
+	end
+
 end
 
 
