@@ -39,5 +39,5 @@ class Fixnum
 		return unless string
 		string.gsub('I','M')
 	end
-	
+
 end
